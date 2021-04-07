@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load pagination %}
+
 {% block title %}
     Lista de Produtos | {{block.super}}
 {% endblock %}
@@ -10,7 +12,7 @@
     <h1>Produtos</h1>
 </div>
 <div class="row">
-    {% for product in product_list %}
+    {% for product in products %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <a href="#">
@@ -25,4 +27,5 @@
     </div>
     {% endfor %}
 </div>
+{% pagination request paginator page_obj %}
 {% endblock %}
