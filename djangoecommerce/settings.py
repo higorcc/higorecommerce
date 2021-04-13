@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # apps
     'core',
     'catalog',
+    'accounts',
     # libs
     'widget_tweaks',
 ]
@@ -154,6 +155,15 @@ EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'admin@djangoecommerce.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# auth
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'logout'
+AUTH_USER_MODEL = 'accounts.user'
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           'accounts.backends.ModelBackend',)
+
 
 try:
     from .local_settings import *
