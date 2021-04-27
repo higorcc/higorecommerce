@@ -4,6 +4,7 @@ from .models import User
 from .forms import UserAdminCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from checkout.models import Order
 # Create your views here.
 
 
