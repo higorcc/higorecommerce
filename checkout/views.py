@@ -101,8 +101,14 @@ class OrderDetailView(LoginRequiredMixin, DetailView):
         return Order.objects.filter(user=self.request.user)
 
 
+class DepositView(LoginRequiredMixin, TemplateView):
+
+    template_name = 'checkout/checkout_deposit.html'
+
+
 create_cartitem = CreateCartItemView.as_view()
 cart_item = CartItemView.as_view()
 checkout = CheckoutView.as_view()
 order_list = OrderListView.as_view()
 order_detail = OrderDetailView.as_view()
+deposit_view = DepositView.as_view()
